@@ -81,7 +81,7 @@ await container.CreateIfNotExistsAsync().ConfigureAwait(false);
 var blob = container.GetBlockBlobReference("MyBlob.txt");
 ```
 
-Here are a few examples how to use the extnsion methods:
+Here are a few examples how to use the extension methods:
 ```
 var leaseId = await blob.TryAcquireLeaseAsync(TimeSpan.FromSeconds(15), 5, cancellationToken).ConfigureAwait(false);
 await blob.UploadTextAsync("Hello World", leaseId, cancellationToken).ConfigureAwait(false);
